@@ -1,0 +1,15 @@
+<% provide(:title, 'Тренеровка') %>
+<h1>Новая тренеровка</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+  <%#= render 'shared/error_messages' %>
+    <%= form_for(@training, :url => {:action => "create"}) do |f| %>
+
+      <%= f.label :training_id, 'Тренеровка' %>
+      <%= f.collection_select :training_id, Training.all, :id, :name %>
+	  
+      <%= f.submit "Dodaty!", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="right_side_bar">
+
+<h2>Додати вправу:</h2>
+
+<div class="">
+  <div class="">
+  <%#= render 'shared/error_messages' %>
+    <%= form_for(@training, :url => {:action => "create"}) do |f| %>
+
+      <%= f.label :training_id, 'Оберіть вправу:' %>
+      <%= f.collection_select :training_id, Training.all, :id, :name %>
+	  <div class="minf first"><%= f.number_field :weight, min: 0 %> вага</div>
+	  <div class="minf"><%= f.number_field :count, min: 0 %> кількість</div>
+	  
+      <%= f.submit "Додати", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+</div>

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525142437) do
+ActiveRecord::Schema.define(version: 20140529171446) do
+
+  create_table "trainings", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_to_trainings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "training_id"
+    t.date     "day"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "weight",      default: 0
+    t.integer  "count",       default: 0
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
