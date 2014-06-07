@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :user_to_trainings
+  has_many :diets
+  has_many :anthropologicals
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token

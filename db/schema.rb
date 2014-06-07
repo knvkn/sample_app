@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529171446) do
+ActiveRecord::Schema.define(version: 20140607122340) do
+
+  create_table "anthropologicals", force: true do |t|
+    t.integer  "user_id"
+    t.date     "day"
+    t.integer  "weight"
+    t.integer  "neck"
+    t.integer  "pecs"
+    t.integer  "arms"
+    t.integer  "waistline"
+    t.integer  "thigh"
+    t.integer  "triceps_surae"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "diets", force: true do |t|
+    t.string   "name"
+    t.integer  "weight"
+    t.integer  "calories"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.date     "day"
+    t.integer  "user_id"
+  end
 
   create_table "trainings", force: true do |t|
     t.string   "name"

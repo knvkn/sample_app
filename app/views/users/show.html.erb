@@ -1,11 +1,10 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<div class="profile">
+<div class="user_name"><%= @user.name %></div>
+        <div class="avatar"><%= gravatar_for @user %></div>
+		<div class="rightst">
+			<div class="mail">Електрона пошта: <%= @user.email %></div>
+			<div class="date_cr">Дата реєстрації: <%= @user.created_at.strftime("%m/%d/%Y") %></div>
+			<div class="weight">Зараз ваша вага: <%= @last_weight %>кг</div>
+		</div>
 </div>

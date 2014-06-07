@@ -1,6 +1,8 @@
 SampleApp::Application.routes.draw do
   resources :users
   resources :trainings
+  resources :diets
+  resources :anthropologicals
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'

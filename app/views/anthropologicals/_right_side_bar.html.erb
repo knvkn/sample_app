@@ -1,0 +1,24 @@
+<div class="right_side_bar">
+
+<h2>Додати страву:</h2>
+
+<div class="">
+  <div class="">
+  <%#= render 'shared/error_messages' %>
+    <%= form_for(@anthropological, :url => {:action => "create"}) do |f| %>
+
+      <%= f.label :anthropological_id, 'Впишіть данні:' %>
+	  <div class="minf first"><%= f.number_field :neck, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :pecs, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :arms, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :waistline, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :thigh, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :triceps_surae, min: 0, placeholder: "0" %>см</div>
+	  <div class="minf"><%= f.number_field :weight, min: 0 %>кг</div>
+	  
+      <%= f.submit "Додати", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+</div>

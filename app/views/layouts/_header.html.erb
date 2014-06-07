@@ -2,25 +2,25 @@
   <div class="navbar-inner">
     <div class="container">
 		<div class="wrap">
-		  <%= link_to "Valeo sport", root_path, id: "logo" %>
-		  <img class="logo_img" src="<%= asset_path( 'logo.png' ) %>" />
+			<img class="logo_img" src="<%= asset_path( 'top.png' ) %>" />
 		 </div>
     </div>
 	
 	    <div class="container_nav">
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Головна", root_path %></li>
+          <li class="home item <%= "active" if current_page?(root_path) %>"><%= link_to "Головна", root_path %></li>
 		  <% if signed_in? %>
-			<li class="main_link"><%= link_to "Мої тренерування", trainings_path %></li>
-			<li class="main_link"><%= link_to "Моя дієта", trainings_path %></li>
+			<li class="training item <%= "active" if current_page?(trainings_path) %>"><%= link_to "Тренерування", trainings_path %></li>
+			<li class="diet item <%= "active" if current_page?(diets_path) %>"><%= link_to "Дієта", diets_path %></li>
+			<li class="anthropological item <%= "active" if current_page?(anthropologicals_path) %>"><%= link_to "Антропологічні дані", anthropologicals_path %></li>
 		  <% end %>
-          <li><%= link_to "Допомога", help_path %></li>
+          <li class="help item <%= "active" if current_page?(help_path) %>"><%= link_to "Допомога", help_path %></li>
           <% if signed_in? %>
             <!--<li><%= link_to "Юзери", users_path %></li>-->
-            <li id="fat-menu" class="dropdown">
+            <li id="fat-menu" class="dropdown account item">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Налаштування <b class="caret"></b>
+                Аккаунт <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Профіль", current_user %></li>
@@ -32,7 +32,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Увійти", signin_path %></li>
+            <li class="signin item <%= "active" if current_page?(signin_path) %>"><%= link_to "Увійти", signin_path %></li>
           <% end %>
         </ul>
       </nav>

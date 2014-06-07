@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+before_filter :setup_day
 before_action :signed_in_user, only: [:index, :edit, :update]
 before_action :correct_user,   only: [:edit, :update]
 
@@ -36,6 +37,21 @@ before_action :correct_user,   only: [:edit, :update]
   
   def edit
   end
+  
+  	def setup_day
+	
+		if params[:date].nil?
+			@day = Date.today
+		else
+			@day = Date.parse(params[:date])
+		end
+		
+		if current_user.anthropologicals.exists?
+			@last_weight = current_user.anthropologicals.last.weight
+		else
+			@last_weight = 0
+		end
+	end
 
   private
 
