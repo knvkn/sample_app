@@ -20,5 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  error_signin: неприпустима комбінація електронної пошти / пароля
+  error_signin: Неправильно введена електронна пошта / пароль
   error_add_tr: додавати антропологічні дані можна максимум раз в день!

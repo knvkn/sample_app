@@ -2,12 +2,12 @@
 	<% if signed_in? %>
 		Вітаємо %) тепер ви можете слідкувати за дієтами ось тут, створювати тренування ось тут, і незабудьте вказати свої ант данні! 
     <% else %>
-		<h1>Вітаємо в <span>"Valeo"!</span></h1> 
+		<h1>Вітаємо в <span>Valeo!</span></h1> 
 		<h1 class="bottom_h">Це простий та інтерактивний електронний журнал спортивних досягнень.</h1>
 		<h2>
-			зареєструйтесь або увійдіть щоб продовжити.
+			Зареєструйтесь або увійдіть щоб продовжити.
 		</h2>
-       <%= link_to "Зараєструватись зараз", signup_path, class: "btn btn-large btn-primary" %>
+       <%= link_to "Зареєструйтесь зараз", signup_path, class: "btn btn-large btn-primary" %>
 	   <%= link_to "Увійти", signin_path, class: "btn btn-large btn-primary" %>
     <% end %>
 </div>

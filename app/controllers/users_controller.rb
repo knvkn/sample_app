@@ -45,12 +45,13 @@ before_action :correct_user,   only: [:edit, :update]
 		else
 			@day = Date.parse(params[:date])
 		end
-		
-		if current_user.anthropologicals.exists?
-			@last_weight = current_user.anthropologicals.last.weight
-		else
-			@last_weight = 0
-		end
+		if signed_in?
+			if current_user.anthropologicals.exists?
+				@last_weight = current_user.anthropologicals.last.weight
+			else
+				@last_weight = 0
+			end
+		end	
 	end
 
   private
